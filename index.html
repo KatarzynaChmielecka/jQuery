@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>
+        Hi, I know that it's a mess :) I just want to show you I know something about jQuery. Exceptionally I wrote
+        inline
+        css style and js/jQuery code in html. I know that it's a bad thing! :) You need to look at the code to see what
+        is happening here :)
+    </p>
+
+    <hr>
+
+    <p>
+        please, click jQuery below :)
+        <h1>jQuery</h1>
+    </p>
+    <h2 class="blaa">buba2</h2>
+
+    <div class="container"></div>
+
+    <div class="test" style="width: 500px; height: 300px;">
+        <button class="button" style="position: relative; top: 0; left:0">Click me!</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+
+    <script>
+        let buba = $("h1");
+        let buba2 = $("h2");
+
+        buba.click(function () {
+            this.style.color = "green";
+            this.style.fontSize = "50px";
+        })
+
+        buba2.text("Nothing special");
+
+        buba.addClass("test-class")
+
+        $(".container").html("<h5>Hello</h5>");
+
+        $("body").css({
+            margin: 0,
+            padding: 0,
+        })
+
+        let speed = 1000;
+        $(".test").click(function () {
+            $(".test .button").animate({
+                left: "150px"
+            }, speed).animate({
+                top: "50px"
+            }, speed).animate({
+                left: 0
+            }, speed).animate({
+                top: 0
+            }, speed).animate({
+                left: "100px"
+            }, speed, function () {
+                $(".button").text("The end :)")
+            });
+        });
+    </script>
+</body>
+
+</html>
