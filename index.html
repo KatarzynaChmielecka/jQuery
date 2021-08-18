@@ -5,14 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .test {
+            background-color: burlywood;
+        }
+    </style>
 </head>
 
 <body>
 
     <p>
         Hi, I know that it's a mess :) I just want to show you I know something about jQuery. Exceptionally I wrote
-        inline
+        inline/head
         css style and js/jQuery code in html. I know that it's a bad thing! :) You need to look at the code to see what
         is happening here :)
     </p>
@@ -27,14 +48,22 @@
 
     <div class="container"></div>
 
-    <div class="test" style="width: 500px; height: 300px;">
+    <div class="test" style="width: 300px; height: 100px; padding:10px;">
         <button class="button" style="position: relative; top: 0; left:0">Click me!</button>
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-    </script>
+    <p>Simple jQuery gallery</p>
+    <div class="fotorama" data-allowfullscreen="native" data-nav="thumbs" data-transition="crossfade" data-loop="true"
+        data-keyboard="true">
+        <img
+            src="https://image.freepik.com/free-photo/brown-foal-lying-ground-surrounded-by-hills-covered-greenery-with-blurry-background_181624-12837.jpg">
+        <img src="https://image.freepik.com/free-photo/horses-grazing-mountain-pasture_222877-3541.jpg">
+        <img src="https://image.freepik.com/free-vector/hand-drawn-horses-collection_1168-309.jpg">
+        <img
+            src="https://image.freepik.com/free-photo/closeup-icelandic-horses-field-covered-snow-grass-iceland_181624-11834.jpg">
+    </div>
+
 
     <script>
         let buba = $("h1");
@@ -50,11 +79,6 @@
         buba.addClass("test-class")
 
         $(".container").html("<h5>Hello</h5>");
-
-        $("body").css({
-            margin: 0,
-            padding: 0,
-        })
 
         let speed = 1000;
         $(".test").click(function () {
